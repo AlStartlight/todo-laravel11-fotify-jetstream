@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\Models\Task;
 class TagController extends Controller
 {
     public function index()
     {
-        $tasks = Task::with('tags', 'subtasks', 'comments', 'reminders', 'attachments')->where('user_id', auth()->id())->get();
+        $tasks = Task::with('tags', 'subtasks', 'comments', 'reminders', 'attachments')->where('user_id', Auth::id())->get();
     }
 
     /**
@@ -22,7 +23,7 @@ class TagController extends Controller
             'color' => 'nullable|string|max:7',
         ]);
 
-        $validatedData['user_id'] = auth()->id();
+        $validatedData['user_id'] = Auth::id();
 
         $tag = Tag::create($validatedData);
     }
@@ -36,7 +37,7 @@ class TagController extends Controller
             'due_date' => 'nullable|date',
         ]);
 
-        $validatedData['user_id'] = auth()->id();
+        $validatedData['user_id'] = Auth::id();
 
         // Membuat task baru
         $task = Task::create($validatedData);
@@ -53,7 +54,7 @@ class TagController extends Controller
     public function show($id)
     {
         $task = Task::with('tags', 'subtasks', 'comments', 'reminders', 'attachments')
-            ->where('user_id', auth()->id())
+            ->where('user_id', Auth::id())
             ->findOrFail($id);
     }
 
@@ -78,7 +79,7 @@ class TagController extends Controller
             'due_date' => 'nullable|date',
         ]);
 
-        $task = Task::where('user_id', auth()->id())->findOrFail($id);
+        $task = Task::where('user_id', Auth::id())->findOrFail($id);
 
         $task->update($validatedData);
 
@@ -93,7 +94,7 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        $task = Task::where('user_id', auth()->id())->findOrFail($id);
+        $task = Task::where('user_id', Auth::id())->findOrFail($id);
 
         // Hapus task dan detach semua tags yang terkait
         $task->tags()->detach();

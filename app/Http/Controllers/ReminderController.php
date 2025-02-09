@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reminder;
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Illuminate\Support\Facades\Auth;
 class ReminderController extends Controller
 {
     public function store(Request $request, $taskId)
@@ -26,7 +27,7 @@ class ReminderController extends Controller
     public function show($id)
     {
         $task = Task::with('tags', 'subtasks', 'comments', 'reminders', 'attachments')
-            ->where('user_id', auth()->id())
+            ->where('user_id', Auth::id())
             ->findOrFail($id);
     }
 
@@ -51,7 +52,7 @@ class ReminderController extends Controller
             'due_date' => 'nullable|date',
         ]);
 
-        $task = Task::where('user_id', auth()->id())->findOrFail($id);
+        $task = Task::where('user_id', Auth::id())->findOrFail($id);
 
         $task->update($validatedData);
 
@@ -66,7 +67,7 @@ class ReminderController extends Controller
      */
     public function destroy($id)
     {
-        $task = Task::where('user_id', auth()->id())->findOrFail($id);
+        $task = Task::where('user_id', Auth::id())->findOrFail($id);
 
         // Hapus task dan detach semua tags yang terkait
         $task->tags()->detach();

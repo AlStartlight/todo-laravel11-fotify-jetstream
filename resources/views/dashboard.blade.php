@@ -20,13 +20,13 @@
             </div>
     </x-slot>
 
-<div class="flex min-h-screen">
+<div class="flex min-h-screen mx-auto">
     <x-aside-bar/>
     <div class="py-12 ">
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
+                @livewire('todo-modal')
             </div>
         </div>
     </div>

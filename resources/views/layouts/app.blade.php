@@ -10,14 +10,27 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/regular.min.css">
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
         @livewireStyles
+        
     </head>
     <body class="font-sans antialiased">
+    @livewireScripts
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
@@ -33,6 +46,7 @@
             @endif
 
             <!-- Page Content -->
+             
             <main>
                 {{ $slot }}
             </main>
