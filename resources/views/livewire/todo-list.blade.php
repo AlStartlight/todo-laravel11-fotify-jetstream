@@ -31,7 +31,7 @@
             <h1>10 Nov • <span class="text-gray-500">today</span></h1>
         </div>
         <div class="flex flex-col gap-6 lg:gap-8   ml-9 mr-2">
-            <div class="bg-white rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
                 <!-- Gambar -->
                 <div class="relative md:w-48">
                     <img class="object-cover w-full h-48 md:h-full" src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Task Image">
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
                 <!-- Gambar -->
                 <div class="relative md:w-48">
                     <img class="object-cover w-full h-48 md:h-full" src="https://opportunitydesk.org/wp-content/uploads/2022/03/Google-Developer-Student-Clubs-Solution-Challenge-2022.jpg" alt="Task Image">
@@ -92,7 +92,7 @@
                     </button>
                 </div>
             </div>
-            <div class="bg-white rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
                 <!-- Gambar -->
                 <div class="relative md:w-48">
                     <img class="object-cover w-full h-48 md:h-full" src="https://www.meetup.com/blog/wp-content/uploads/2022/01/pexels-matheus-bertelli-3856033-945x630.jpg" alt="Task Image">
@@ -122,7 +122,7 @@
                     </button>
                 </div>
             </div>
-            <div class="bg-white rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
                 <!-- Gambar -->
                 <div class="relative md:w-48">
                     <img class="object-cover w-full h-48 md:h-full" src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Task Image">
@@ -159,7 +159,7 @@
     <hr />
     <div class="flex flex-col w-full md:w-1/2">
         <div class="p-6 lg:p-8 bg-white border-b border-gray-200 flex flex-row justify-between ">
-            <x-nav-link class="flex flex-row gap-2">
+            <x-nav-link class="flex flex-row gap-2 ">
                 <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -175,108 +175,81 @@
             </x-nav-link>
             <div></div>
         </div>
+        @livewire('task-status')
         <div class="flex- flex-column gap-6 lg:gap-8  ml-9">
-            <div>
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        class="w-6 h-6 stroke-gray-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                    </svg>
-                    <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                        <a href="https://laravel.com/docs">Documentation</a>
-                    </h2>
+            <x-nav-link class="flex flex-row gap-2 my-12">
+                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.64 20.0776L13.2572 17.669L11.96 18.9802L15.64 22.7L23 15.2604L21.7028 13.9492L15.64 20.0776Z"
+                        fill="#A1A3AB" />
+                    <path
+                        d="M15.8909 2.39129H13.5073V1.59419C13.506 1.17178 13.3382 0.767019 13.0404 0.468322C12.7427 0.169626 12.3392 0.00126159 11.9182 0H5.56182C5.14075 0.00126159 4.73729 0.169626 4.43955 0.468322C4.14181 0.767019 3.97398 1.17178 3.97273 1.59419V2.39129H1.58909C1.16802 2.39255 0.764563 2.56092 0.466823 2.85961C0.169083 3.15831 0.00125755 3.56307 0 3.98549V20.7245C0.00125755 21.1469 0.169083 21.5517 0.466823 21.8504C0.764563 22.1491 1.16802 22.3175 1.58909 22.3187H8.74V20.7245H1.58909V3.98549H3.97273V6.37678H13.5073V3.98549H15.8909V12.7536H17.48V3.98549C17.4787 3.56307 17.3109 3.15831 17.0132 2.85961C16.7154 2.56092 16.312 2.39255 15.8909 2.39129ZM11.9182 4.78258H5.56182V1.59419H11.9182V4.78258Z"
+                        fill="#A1A3AB" />
+                </svg>
+
+
+                <h1 class="text-indigo-500">Task Complete</h1>
+            </x-nav-link>
+            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
+                <!-- Gambar -->
+                <div class="relative md:w-48">
+                    <img class="object-cover w-full h-48 md:h-full" src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Task Image">
                 </div>
 
-                <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-                    Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to
-                    the framework or have previous experience, we recommend reading all of the documentation from
-                    beginning to end.
-                </p>
+                <!-- Konten -->
+                <div class="p-5 flex flex-col justify-between flex-1 relative">
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-2">
+                        <h5 class="text-xl font-semibold text-gray-900">Noteworthy technology acquisitions 2021</h5>
+                    </div>
 
-                <p class="mt-4 text-sm">
-                    <a href="https://laravel.com/docs" class="inline-flex items-center font-semibold text-indigo-700">
-                        Explore the documentation
+                    <!-- Deskripsi -->
+                    <p class="text-gray-700 text-sm mb-4">
+                        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                    </p>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            class="ms-1 w-5 h-5 fill-indigo-500">
-                            <path fill-rule="evenodd"
-                                d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                </p>
+                    <!-- Info Tugas -->
+                    <div class="flex justify-between text-sm text-gray-600">
+                        <p>Priority: <br><span class="font-semibold text-blue-600">Low</span></p>
+                        <p>Status: <br><span class="font-semibold text-red-600">Not Started</span></p>
+                        <p>Create On: <br><span class="font-semibold text-gray-800">Feb 9, 2025</span></p>
+                    </div>
+                    <button class="absolute top-2 right-2 bg-white text-gray-500 p-2 rounded-full shadow-sm hover:bg-gray-100">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
             </div>
+            <div class="bg-white mx-5  rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300 my-4">
+                <!-- Gambar -->
+                <div class="relative md:w-48">
+                    <img class="object-cover w-full h-48 md:h-full" src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Task Image">
 
-            <div>
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        class="w-6 h-6 stroke-gray-400">
-                        <path stroke-linecap="round"
-                            d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                    </svg>
-                    <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                        <a href="https://laracasts.com">Laracasts</a>
-                    </h2>
                 </div>
 
-                <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check
-                    them out, see for yourself, and massively level up your development skills in the process.
-                </p>
+                <!-- Konten -->
+                <div class="p-5 flex flex-col justify-between flex-1 relative">
+                    <!-- Header -->
+                    <div class="flex items-center gap-3 mb-2">
+                        <h5 class="text-xl font-semibold text-gray-900">Noteworthy technology acquisitions 2021</h5>
+                    </div>
 
-                <p class="mt-4 text-sm">
-                    <a href="https://laracasts.com" class="inline-flex items-center font-semibold text-indigo-700">
-                        Start watching Laracasts
+                    <!-- Deskripsi -->
+                    <p class="text-gray-700 text-sm mb-4">
+                        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                    </p>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            class="ms-1 w-5 h-5 fill-indigo-500">
-                            <path fill-rule="evenodd"
-                                d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                </p>
-            </div>
-
-            <div>
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        class="w-6 h-6 stroke-gray-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                    </svg>
-                    <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                        <a href="https://tailwindcss.com/">Tailwind</a>
-                    </h2>
+                    <!-- Info Tugas -->
+                    <div class="flex justify-between text-sm text-gray-600">
+                        <p>Priority: <br><span class="font-semibold text-blue-600">Low</span></p>
+                        <p>Status: <br><span class="font-semibold text-red-600">Not Started</span></p>
+                        <p>Create On: <br><span class="font-semibold text-gray-800">Feb 9, 2025</span></p>
+                    </div>
+                    <button class="absolute top-2 right-2 bg-white text-gray-500 p-2 rounded-full shadow-sm hover:bg-gray-100">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
                 </div>
-
-                <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-                    Laravel Jetstream is built with Tailwind, an amazing utility first CSS framework that doesn't get in
-                    your way. You'll be amazed how easily you can build and maintain fresh, modern designs with this
-                    wonderful framework at your fingertips.
-                </p>
             </div>
-
-            <div>
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        class="w-6 h-6 stroke-gray-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                    </svg>
-                    <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                        Authentication
-                    </h2>
-                </div>
-
-                <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-                    Authentication and registration views are included with Laravel Jetstream, as well as support for
-                    user email verification and resetting forgotten passwords. So, you're free to get started with what
-                    matters most: building your application.
-                </p>
-            </div>
-
         </div>
     </div>
 </div>
