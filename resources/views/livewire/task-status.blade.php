@@ -10,6 +10,7 @@
         @foreach ($data as $item)
             <div class="flex flex-col items-center">
                 <span class="font-semibold text-gray-800">{{ $item['value'] }}%</span>
+                <span class="font-semibold text-gray-800">{{ $item['total'] }} task</span>
                 <div class="flex items-center space-x-1 mt-1">
                     <span class="w-2 h-2 rounded-full" style="background-color: {{ $item['color'] }}"></span>
                     <span class="text-sm text-gray-600">{{ $item['name'] }}</span>
@@ -38,7 +39,17 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                cutout: "50%"
+                cutout: "50%",
+                tooltips: {
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            var index = tooltipItem.index;
+                            var total = @json(array_column($data, 'total'))[index];
+                            var percentage = @json(array_column($data, 'percentage'))[index];
+                            return data.labels[index] + ': ' + total + ' (' + percentage + '%)';
+                        }
+                    }
+                }
             }
         });
     });

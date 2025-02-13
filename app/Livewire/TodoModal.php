@@ -6,13 +6,17 @@ use Livewire\Component;
 use App\Models\Task;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
 class TodoModal extends Component
 {
+    use WithFileUploads;
     public $showModal = false;
     public $task_id, $title, $description,  $due_date;
     public $priority = 'Low'; 
     public $status = 'Not Started';
     protected $listeners = ['openModal'];//listerner buat panggil fungsi ini ke class view lain
+    public $image;
+
     public function openModal(){
         $this->showModal =true;
     }
@@ -45,8 +49,9 @@ class TodoModal extends Component
             'priority'=>'required|in:Low,Medium,High',
             'status'=>'required|in:Not Started,In Progress,Complete',
             'due_date'=>'nullable|date',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:1024',
         ]);
-
+        $imageName = $this->image->store('images', 'public');
         Task::create([
             'user_id'=>Auth::id(),
             'title'=>$this->title,
@@ -54,6 +59,7 @@ class TodoModal extends Component
             'priority'=>$this->priority,
             'status'=>$this->status,
             'due_date'=>$this->due_date,
+            'image_path' => $imageName,
         ]);
        
         // Simpan ke database (contoh tanpa model)

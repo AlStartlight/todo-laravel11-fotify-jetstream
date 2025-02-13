@@ -31,10 +31,11 @@
             <h1>10 Nov • <span class="text-gray-500">today</span></h1>
         </div>
         <div class="flex flex-col gap-6 lg:gap-8   ml-9 mr-2">
+            @foreach ($tasks as $task)
             <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
                 <!-- Gambar -->
                 <div class="relative md:w-48">
-                    <img class="object-cover w-full h-48 md:h-full" src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Task Image">
+                    <img class="object-cover w-full h-48 md:h-full" src="{{ Storage::url($task->image_path) }}" alt="Task Image">
 
                 </div>
 
@@ -42,116 +43,30 @@
                 <div class="p-5 flex flex-col justify-between flex-1 relative">
                     <!-- Header -->
                     <div class="flex items-center gap-3 mb-2">
-                        <h5 class="text-xl font-semibold text-gray-900">Noteworthy technology acquisitions 2021</h5>
+                        <h5 class="text-xl font-semibold text-gray-900">{{ $task->title }}</h5>
                     </div>
 
                     <!-- Deskripsi -->
                     <p class="text-gray-700 text-sm mb-4">
-                        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                    {{ Str::words($task->description,15) }}
                     </p>
 
                     <!-- Info Tugas -->
                     <div class="flex justify-between text-sm text-gray-600">
-                        <p>Priority: <br><span class="font-semibold text-blue-600">Low</span></p>
-                        <p>Status: <br><span class="font-semibold text-red-600">Not Started</span></p>
-                        <p>Create On: <br><span class="font-semibold text-gray-800">Feb 9, 2025</span></p>
+                        <p>Priority: <br><span class="font-semibold text-blue-600">{{ $task->priority }}</span></p>
+                        <p>Status: <br><span class="font-semibold text-red-600">{{ $task->status }}</span></p>
+                        <p>Create On: <br><span class="font-semibold text-gray-800">{{ $task->due_date}}</span></p>
                     </div>
                     <button class="absolute top-2 right-2 bg-white text-gray-500 p-2 rounded-full shadow-sm hover:bg-gray-100">
                         <i class="fas fa-ellipsis-h"></i>
                     </button>
                 </div>
             </div>
-
-            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
-                <!-- Gambar -->
-                <div class="relative md:w-48">
-                    <img class="object-cover w-full h-48 md:h-full" src="https://opportunitydesk.org/wp-content/uploads/2022/03/Google-Developer-Student-Clubs-Solution-Challenge-2022.jpg" alt="Task Image">
-
-                </div>
-
-                <!-- Konten -->
-                <div class="p-5 flex flex-col justify-between flex-1 relative">
-                    <!-- Header -->
-                    <div class="flex items-center gap-3 mb-2">
-                        <h5 class="text-xl font-semibold text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                    </div>
-
-                    <!-- Deskripsi -->
-                    <p class="text-gray-700 text-sm mb-4">
-                        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                    </p>
-
-                    <!-- Info Tugas -->
-                    <div class="flex justify-between text-sm text-gray-600">
-                        <p>Priority: <br><span class="font-semibold text-blue-600">Low</span></p>
-                        <p>Status: <br><span class="font-semibold text-red-600">Not Started</span></p>
-                        <p>Create On: <br><span class="font-semibold text-gray-800">Feb 9, 2025</span></p>
-                    </div>
-                    <button class="absolute top-2 right-2 bg-white text-gray-500 p-2 rounded-full shadow-sm hover:bg-gray-100">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
-                <!-- Gambar -->
-                <div class="relative md:w-48">
-                    <img class="object-cover w-full h-48 md:h-full" src="https://www.meetup.com/blog/wp-content/uploads/2022/01/pexels-matheus-bertelli-3856033-945x630.jpg" alt="Task Image">
-
-                </div>
-
-                <!-- Konten -->
-                <div class="p-5 flex flex-col justify-between flex-1 relative">
-                    <!-- Header -->
-                    <div class="flex items-center gap-3 mb-2">
-                        <h5 class="text-xl font-semibold text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                    </div>
-
-                    <!-- Deskripsi -->
-                    <p class="text-gray-700 text-sm mb-4">
-                        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                    </p>
-
-                    <!-- Info Tugas -->
-                    <div class="flex justify-between text-sm text-gray-600">
-                        <p>Priority: <br><span class="font-semibold text-blue-600">Low</span></p>
-                        <p>Status: <br><span class="font-semibold text-red-600">Not Started</span></p>
-                        <p>Create On: <br><span class="font-semibold text-gray-800">Feb 9, 2025</span></p>
-                    </div>
-                    <button class="absolute top-2 right-2 bg-white text-gray-500 p-2 rounded-full shadow-sm hover:bg-gray-100">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
-                <!-- Gambar -->
-                <div class="relative md:w-48">
-                    <img class="object-cover w-full h-48 md:h-full" src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Task Image">
-
-                </div>
-
-                <!-- Konten -->
-                <div class="p-5 flex flex-col justify-between flex-1 relative">
-                    <!-- Header -->
-                    <div class="flex items-center gap-3 mb-2">
-                        <h5 class="text-xl font-semibold text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                    </div>
-
-                    <!-- Deskripsi -->
-                    <p class="text-gray-700 text-sm mb-4">
-                        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                    </p>
-
-                    <!-- Info Tugas -->
-                    <div class="flex justify-between text-sm text-gray-600">
-                        <p>Priority: <br><span class="font-semibold text-blue-600">Low</span></p>
-                        <p>Status: <br><span class="font-semibold text-red-600">Not Started</span></p>
-                        <p>Create On: <br><span class="font-semibold text-gray-800">Feb 9, 2025</span></p>
-                    </div>
-                    <button class="absolute top-2 right-2 bg-white text-gray-500 p-2 rounded-full shadow-sm hover:bg-gray-100">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </button>
-                </div>
-            </div>
+            @endforeach
+            
+            <div class="my-4 mx-20">
+            {{ $tasks->links('pagination::tailwind') }}
+        </div>
 
         </div>
     </div>
@@ -177,7 +92,7 @@
         </div>
         @livewire('task-status')
         <div class="flex- flex-column gap-6 lg:gap-8  ml-9">
-            <x-nav-link class="flex flex-row gap-2 my-12">
+            <x-nav-link class="flex flex-row gap-2 my-8 mt-4">
                 <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -191,39 +106,11 @@
 
                 <h1 class="text-indigo-500">Task Complete</h1>
             </x-nav-link>
-            <div class="bg-white mx-5 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
+            @foreach ($task_complete as $task_completes )
+            <div class="bg-white mx-5 my-4 rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300">
                 <!-- Gambar -->
                 <div class="relative md:w-48">
-                    <img class="object-cover w-full h-48 md:h-full" src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Task Image">
-                </div>
-
-                <!-- Konten -->
-                <div class="p-5 flex flex-col justify-between flex-1 relative">
-                    <!-- Header -->
-                    <div class="flex items-center gap-3 mb-2">
-                        <h5 class="text-xl font-semibold text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                    </div>
-
-                    <!-- Deskripsi -->
-                    <p class="text-gray-700 text-sm mb-4">
-                        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                    </p>
-
-                    <!-- Info Tugas -->
-                    <div class="flex justify-between text-sm text-gray-600">
-                        <p>Priority: <br><span class="font-semibold text-blue-600">Low</span></p>
-                        <p>Status: <br><span class="font-semibold text-red-600">Not Started</span></p>
-                        <p>Create On: <br><span class="font-semibold text-gray-800">Feb 9, 2025</span></p>
-                    </div>
-                    <button class="absolute top-2 right-2 bg-white text-gray-500 p-2 rounded-full shadow-sm hover:bg-gray-100">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="bg-white mx-5  rounded-xl border-b-[0.25px] border-r-[0.1px] border-red-600 shadow-md overflow-hidden md:flex md:max-w-2xl hover:shadow-lg transition-shadow duration-300 my-4">
-                <!-- Gambar -->
-                <div class="relative md:w-48">
-                    <img class="object-cover w-full h-48 md:h-full" src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="Task Image">
+                    <img class="object-cover w-full h-48 md:h-full" src="{{ Storage::url($task_completes->image_path) }}" alt="Task Image">
 
                 </div>
 
@@ -231,25 +118,30 @@
                 <div class="p-5 flex flex-col justify-between flex-1 relative">
                     <!-- Header -->
                     <div class="flex items-center gap-3 mb-2">
-                        <h5 class="text-xl font-semibold text-gray-900">Noteworthy technology acquisitions 2021</h5>
+                        <h5 class="text-xl font-semibold text-gray-900">{{ $task_completes->title }}</h5>
                     </div>
 
                     <!-- Deskripsi -->
                     <p class="text-gray-700 text-sm mb-4">
-                        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                    {{ Str::words($task_completes->description,15) }}
                     </p>
 
                     <!-- Info Tugas -->
                     <div class="flex justify-between text-sm text-gray-600">
-                        <p>Priority: <br><span class="font-semibold text-blue-600">Low</span></p>
-                        <p>Status: <br><span class="font-semibold text-red-600">Not Started</span></p>
-                        <p>Create On: <br><span class="font-semibold text-gray-800">Feb 9, 2025</span></p>
+                        <p>Priority: <br><span class="font-semibold text-blue-600">{{ $task_completes->priority }}</span></p>
+                        <p>Status: <br><span class="font-semibold text-red-600">{{ $task_completes->status }}</span></p>
+                        <p>Create On: <br><span class="font-semibold text-gray-800">{{ $task_completes->due_date}}</span></p>
                     </div>
                     <button class="absolute top-2 right-2 bg-white text-gray-500 p-2 rounded-full shadow-sm hover:bg-gray-100">
                         <i class="fas fa-ellipsis-h"></i>
                     </button>
                 </div>
             </div>
+            @endforeach
+            <div class="my-4 mr-20">
+            {{ $task_complete->links('pagination::tailwind') }}
+        </div>
+            
         </div>
     </div>
 </div>

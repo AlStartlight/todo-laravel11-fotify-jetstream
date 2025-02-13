@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->enum('priority',['Low','Medium','High']);
             $table->enum('status',['Not Started','In Progress','Complete']);
+            $table->string('image_path');
             $table->date('due_date')->nullable();
             $table->timestamps();
         });
