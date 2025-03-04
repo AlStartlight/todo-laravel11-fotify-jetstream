@@ -16,11 +16,11 @@ class TodoList extends Component
         return view('livewire.todo-list',[
             'tasks' => Task::orderBy('id','DESC')
             ->where('user_id', Auth::id())
-            ->paginate(4),
+            ->paginate(4)->withQueryString(),
             'task_complete'=>Task::orderBy('id','DESC')
             ->where('user_id', Auth::id())
             ->where('status','Complete')
-            ->paginate(2)
+            ->paginate(2)->withQueryString(),
         ]);
     }
 }

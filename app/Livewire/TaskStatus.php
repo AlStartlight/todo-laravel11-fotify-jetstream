@@ -31,11 +31,11 @@ class TaskStatus extends Component
         $not_started_percentage = ($task_count > 0) ?
          ($not_started / $task_count) * 100 : 0;
         $this->data = [
-            ["name" => "Completed", "value" => $completed_percentage,
+            ["name" => "Completed", "value" => round($completed_percentage,2),
             "total"=>$completed, "color" => "#16A34A"],
-            ["name" => "In Progress", "value" =>  $in_progress_percentage,
+            ["name" => "In Progress", "value" =>  round($in_progress_percentage, 2),
             "total"=>$in_progress, "color" => "#1D4ED8"],
-            ["name" => "Not Started", "value" => $not_started_percentage, 
+            ["name" => "Not Started", "value" => round($not_started_percentage,2), 
             "total"=>$not_started,"color" => "#DC2626"],
         ];
     }
